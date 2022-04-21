@@ -1,0 +1,16 @@
+{% extends 'books/base.html' %}
+{% load static %}
+
+{% block title %}
+  Home Page
+{% endblock %}
+
+{% block content %}
+<div>
+  {% for book in books %}
+  <h2><a href="{% url 'book' book.id %}">{{book.name}}</a></h2>
+  {% empty %}
+  <p>No books Found</p>
+  {% endfor %}
+</div>
+{% endblock %} 

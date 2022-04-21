@@ -1,0 +1,22 @@
+{% extends 'books/base.html' %} 
+{% load static %}
+
+{% block title %}
+  {{author.name}}
+{% endblock %}
+
+{% block content %}
+  <div class="card" >
+
+    <div class="card-body">
+      <h2 class="card-title"><span style="color:blue">{{p.name}}</span></h2>
+      <h2 class="card-text">List Books :</h2>
+      {% for book in books %}
+      <a href="{% url 'book' book.id %}"><p class="card-text">{{book.name}}</p> </a> 
+      {% endfor %}
+          
+    </div>
+  </div>
+  {% endblock  %}
+
+

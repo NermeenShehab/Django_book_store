@@ -1,0 +1,27 @@
+{% extends 'books/base.html' %} {% load static %} {% block title %}
+{{book.name}} {% endblock %} 
+<div>
+
+
+
+
+{% block content %}
+   
+  <div class="card fs-2 m-5" >
+    <div class="card-body">
+        <img src="{{ book.image.url }}" class="card-img-top" alt="...">
+      <h5 class="card-title fs-1">{{book.name}}</h5>
+      <p class="card-text"> publish Date :{{book.publish_date}}</p>
+      <p class="card-text"> add_to_the_site : {{book.add_to_the_site}}</p>
+      <p class="card-text">price : {{book.price}}</p>
+      <p class="card-text">appropriate : {{book.appropriate}}</p>
+
+      <a href="{% url 'author' book.author.id %}" class="">
+          <p class="card-text">Author : {{book.author}}</p>
+        </a>
+    </div>
+  </div>
+
+
+    {% endblock %}
+</div>

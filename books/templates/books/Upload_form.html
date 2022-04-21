@@ -1,0 +1,21 @@
+{% extends 'books/library.html' %}
+{% block content %}
+    <center>
+  
+    <form method = 'POST' enctype="multipart/form-data" class="mt-3 col-10">
+        {% csrf_token %}
+        <table class = 'table table-light bg-light ' style="border-radius:10px;">
+            {% for field in upload_form %}
+            <tr >
+                <th >{{field.label}}</th>
+                <td >{{ field }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="bg-light col-12 d-flex justify-content-around" style="margin-top: -16px;">
+
+            <button type="submit" class="btn btn-lg btn-warning m-2">Create</button>
+        </div>
+    </form>
+</center>
+{% endblock %}

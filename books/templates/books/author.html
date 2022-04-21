@@ -1,0 +1,30 @@
+{% extends 'books/base.html' %} 
+{% load static %}
+
+{% block title %}
+  {{author.name}}
+{% endblock %}
+
+{% block content %}
+
+
+
+<ul>
+{% for author in authors %}
+   
+
+    <li class="list-group-item list-group-item-action list-group-item-primary"><a href="{% url 'author' author.id %}">{{author.name}}</a></li>
+    <li class="list-group-item list-group-item-danger">
+
+    </li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
+
+
+
